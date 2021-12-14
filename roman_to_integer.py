@@ -54,7 +54,7 @@
 # 3. If the integer value of a roman character is not less than the one after it, it needs to be added
 # Example - IV and VI
 # I < V so we need to subtract I
-# V > I so we need to add I
+# V > I so we need to add V
 # 4. Edge Case: If input string has length 1, directly return the integer value
 
 tests = [
