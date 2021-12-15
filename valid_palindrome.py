@@ -31,15 +31,15 @@ def solution(s):
     lp = len(s) - 1
 
     while not sp > lp:
-        if s[sp].isalpha() and s[lp].isalpha():
+        if s[sp].islanum() and s[lp].islanum():
             if not s[sp].lower() == s[lp].lower():
                 return False
             sp += 1
             lp -= 1
         else:
-            if not s[sp].isalpha():
+            if not s[sp].islanum():
                 sp += 1
-            if not s[lp].isalpha():
+            if not s[lp].islanum():
                 lp -= 1
     
     return True
