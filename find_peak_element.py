@@ -43,7 +43,7 @@ def is_peak(pos, nums):
 
 def solution(nums):
     if len(nums) == 1:
-        return nums[0]
+        return 0
     if len(nums) == 2:
         return nums.index(max(nums[0], nums[1]))
     
@@ -58,5 +58,3 @@ def solution(nums):
             right = pos - 1
         else:
             left = pos + 1
-
-print(solution([1,2,1,3,5,6,4]))
