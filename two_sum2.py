@@ -26,13 +26,41 @@
 # -1000 <= target <= 1000
 # The tests are generated such that there is exactly one solution.
 
+tests = [
+    {
+        'numbers': [2,7,11,15],
+        'target': 9,
+        'output': [1,2]
+    },
+    {
+        'numbers': [2,3,4],
+        'target': 6,
+        'output': [1,3]
+    },
+    {
+        'numbers': [-1,0],
+        'target': -1,
+        'output': [1,2]
+    }
+]
 def solution(numbers, target):
-    hash_map = dict()
+    left = 0
+    right = len(numbers) - 1
     
-    for i in range(0,len(numbers)):
-        curr = numbers[i]
-        diff = target - curr
-        if diff in hash_map:
-            return [hash_map[diff], i+1]
+    while not left > right:
+        sum = numbers[left] + numbers[right]
+        if sum == target:
+            return [left+1, right+1]
+        elif sum > target:
+            right -= 1
         else:
-            hash_map[curr] = i+1
+            left += 1
+
+counter  = 0
+for test in tests:
+    if test['output'] == solution(test['numbers'], test['target']):
+        print(f"Test Case {counter} Passed!")
+    else:
+        print(f"Test Case {counter} Failed!")
+    print()
+    counter += 1
