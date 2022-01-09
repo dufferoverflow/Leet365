@@ -24,7 +24,7 @@ def solution(nums):
         return output
     
     nums = sorted(nums)
-    prev_a = sys.maxsize
+    
     for i, a in enumerate(nums):
         if i > 0 and nums[i - 1] == a:
             continue
