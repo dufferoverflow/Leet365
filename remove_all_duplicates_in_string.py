@@ -62,5 +62,3 @@ for test in tests:
     
     print()
     counter += 1
-
-# print(solution("abbaca"))
